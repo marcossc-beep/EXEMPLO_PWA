@@ -1,16 +1,34 @@
-# React + Vite
+Passo 1: Subir o seu código atualizado para o GitHub
+Antes de ir para a Vercel, o seu projeto precisa estar salvo no GitHub com todas essas alterações do PWA que fizemos.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+No terminal do VS Code, rode os seguintes comandos:
 
-Currently, two official plugins are available:
+git add . (para adicionar as imagens e o vite.config.js modificado).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+git commit -m "Configurando PWA para deploy" (para salvar as alterações).
 
-## React Compiler
+git push (para enviar para o GitHub).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Passo 2: Criar a conta na Vercel
+Acesse o site vercel.com.
 
-## Expanding the ESLint configuration
+Clique em Sign Up (ou Log In, se já tiver conta) e escolha a opção de entrar com o GitHub. Isso vai vincular as duas contas e facilitar muito a sua vida.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Passo 3: Importar o projeto
+No painel principal da Vercel, clique no botão preto "Add New..." e escolha "Project".
+
+A Vercel vai listar os seus repositórios do GitHub. Encontre o repositório desse seu projeto (CONCEITOS_REACT_3B) e clique no botão "Import".
+
+Passo 4: Configurar o Deploy
+A Vercel é muito inteligente e provavelmente vai preencher tudo sozinha, mas é bom conferir:
+
+Em Framework Preset, veja se está marcado Vite.
+
+Em Build and Output Settings (se precisar abrir), o Build Command deve ser npm run build e o Output Directory deve ser dist.
+
+Clique no botão azul "Deploy".
+
+A Vercel vai começar a construir o seu projeto (é o mesmo que rodar aquele npm run build na sua máquina, só que nos servidores deles). Isso leva menos de um minuto.
+
+Passo 5: Pegar o link e testar!
+Quando terminar, a tela vai encher de confetes! Clique em "Continue to Dashboard". Lá você vai ver o botão "Visit" com o link público do seu site (algo como conceitos-react-3b.vercel.app).
